@@ -40,8 +40,8 @@
    
        // Phản hồi chatfuel
    
-       $name = $data['data']['name'];
-       $chatfuel->sendText($text);
+    //    $name = $data['data']['name'];
+       $chatfuel->sendText("abc");
     //    $artists_names = $data['data']['artists_names'];
     //    $chatfuel->sendTextSucces($text, $artists_names);
        $chatfuel->sendImage($data['data']['artist']['cover']); 
