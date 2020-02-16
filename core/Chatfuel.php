@@ -19,7 +19,7 @@ class Chatfuel
   {
     if (count($this->response) > 0) {
       try {
-//         header('Content-Type: application/json');
+        header('Content-Type: application/json, charset=utf-8');
         header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
         header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         header('Access-Control-Max-Age: 1000');
