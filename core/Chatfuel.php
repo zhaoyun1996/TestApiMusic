@@ -40,12 +40,10 @@ class Chatfuel
 
     $type = gettype($messages);
     if ($type === 'string') {
-      $this->response[] = array('text' => $messages);
-      $this->response[] = array('artists_names' => $artists_names);
+      $this->response[] = array({'text' => $messages, 'artists_names' => $artists_names});
     } elseif ($type === 'array' || is_array($messages)) {
       foreach ($messages as $message) {
-        $this->response[] = array('text' => $message);
-        $this->response[] = array('artists_names' => $artists_names);
+        $this->response[] = array({'text' => $messages, 'artists_names' => $artists_names});
       }
     } else {
       $this->response[] = array('text' => 'Error!');
