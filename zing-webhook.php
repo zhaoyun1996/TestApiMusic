@@ -43,6 +43,7 @@
        $name = $data['data']['name'];
        $artists_names = $data['data']['artists_names'];
     //    $chatfuel->sendTextSuccess($text, $artists_names);
+       $chatfuel->sendText($text);
        $chatfuel->sendImage($data['data']['artist']['cover']); 
        $chatfuel->sendAudio(str_replace('//', 'https://', $data['data']['source']['128']));
    } else {
