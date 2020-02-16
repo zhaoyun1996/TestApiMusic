@@ -32,6 +32,24 @@ class Chatfuel
     }
   }
 
+  public function sendTextSuccess($messages = null, $artists_names = null)
+  {
+    if (is_null($messages)) {
+      throw new Exception('Invalid input', 1);
+    }
+
+    $type = gettype($messages);
+    if ($type === 'string') {
+      $this->response[] = array({'text' => $messages, 'artists_names' => $artists_names});
+    } elseif ($type === 'array' || is_array($messages)) {
+      foreach ($messages as $message) {
+        $this->response[] = array({'text' => $messages, 'artists_names' => $artists_names});
+      }
+    } else {
+      $this->response[] = array('text' => 'Error!');
+    }
+  }
+
   public function sendText($messages = null)
   {
     if (is_null($messages)) {
