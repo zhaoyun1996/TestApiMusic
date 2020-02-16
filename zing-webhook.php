@@ -40,8 +40,9 @@
    
        // Phản hồi chatfuel
    
-       $text = 'Bài Hát ' . $data['data']['name'] . ' của ' . $data['data']['artists_names'] . ' phải không?';
-       $chatfuel->sendText($text);
+       $name = $data['data']['name'];
+       $artists_names = $data['data']['artists_names'];
+       $chatfuel->sendTextSucces($text, $artists_names);
        $chatfuel->sendImage($data['data']['artist']['cover']); 
        $chatfuel->sendAudio(str_replace('//', 'https://', $data['data']['source']['128']));
    } else {
